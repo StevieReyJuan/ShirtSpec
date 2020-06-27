@@ -1,0 +1,48 @@
+body * {
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  body {
+    padding: 60px 0 0;
+    font-size: 20px;
+  }
+
+  nav {
+    padding: 1% 0;
+    background-color: #aaa;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  section {
+    min-height: 200px;
+    padding: 30px 15px;
+    background-color: #ddd;
+  }
+
+  .measure-pic {
+    background-color: #fff;
+    min-width: 300px;
+    min-height: 300px;
+  }
+
+  section:nth-child(even) {
+    background-color: #bbb;
+  }
+
+  .logo {
+    padding: 1%
+  }
+  
+  footer {
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  button {
+    margin: 2% 1%;
+  }
