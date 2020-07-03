@@ -1,0 +1,30 @@
+@media only screen and (max-width: 768px) {
+    .sideBar ul {
+        list-style: none;
+        display: none;
+        flex-flow: column nowrap;
+        background-color: #bbb;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 300px;
+        padding-top: 3.5rem;
+
+    }
+    
+    .sideBar li {
+        color: #fff;
+        display: block;
+    }
+}
+
+.sideBar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sideBar li {
+    padding: 18px 10px;
+}
