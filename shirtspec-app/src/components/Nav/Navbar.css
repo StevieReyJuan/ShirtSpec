@@ -10,7 +10,7 @@
 .nav ul {
     display: inline-block;
     text-align: right;
-    padding: 0 20px;
+    padding: 0 0;
     list-style: none;
 }
 

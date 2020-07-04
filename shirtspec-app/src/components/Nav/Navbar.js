@@ -4,9 +4,9 @@ import './Navbar.css'
 
 function Navbar(props) {
     const { links } = props;
-    const linkLis = links.map(l => 
-        <Link to={l.link}>
-            <li>{l.title}</li>
+    const linkLis = links.map((l, i) => 
+        <Link key={i} to={l.link}>
+            <li key={i}>{l.title}</li>
         </Link>
         );
 

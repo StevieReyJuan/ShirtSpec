@@ -22,7 +22,7 @@ class MeasurementReview extends Component {
                 <Navbar links={links}/>
                 <Content className="review-table">
                     <table>
-                        <tbody>
+                        <thead>
                             <tr>
                                 <td>Chest</td>
                                 <td>Shirt Waist</td>
@@ -34,6 +34,8 @@ class MeasurementReview extends Component {
                                 <td>Collar</td>
                                 <td>Shoulder Line</td>
                             </tr>
+                        </thead>
+                        <tbody>
                             <tr>
                                 <td>
                                     <span id="chest">0</span>

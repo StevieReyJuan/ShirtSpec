@@ -39,14 +39,14 @@ class MeasurementPage extends Component {
                         <Buttons
                             className="MeasurementPage"
                             tag={Link}
-                            to='/'
+                            to='/' //use state for page 
                         >
                             Back
                         </Buttons>
                         <Buttons
                             className="MeasurementPage"
                             tag={Link}
-                            to='/measurement-page/shirt-waist'
+                            to='/measurement-page/shirt-waist' //use state for page
                         >
                             Next
                         </Buttons>

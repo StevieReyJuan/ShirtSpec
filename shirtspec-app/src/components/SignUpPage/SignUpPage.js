@@ -30,8 +30,8 @@ function SignUpPage() {
 
                         <label htmlFor="repeatPassword" required>Re-Enter Password</label>
                         <input placeholder="1234passw0rd" type="password" id="repeatPassword"/>
-
-                        <button type="submit">Register</button>
+                        {/* <button type="submit">Register</button>  */}
+                        <Link to='/'><button type="button">Register</button> </Link>
                         </fieldset>
                     </form>
                 </main>
