@@ -13,18 +13,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-<<<<<<< HEAD
     "prebuild": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "vercel --prod"
-=======
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
->>>>>>> 5c54e475b4302bad150259b251ab2af6b438d105
   },
   "eslintConfig": {
     "extends": "react-app"
