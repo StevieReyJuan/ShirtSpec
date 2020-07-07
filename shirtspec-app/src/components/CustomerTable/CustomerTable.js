@@ -21,17 +21,29 @@ class CustomerTable extends Component {
 
         const testTable = [
             {
+<<<<<<< HEAD
                 id: '001',
+=======
+                num: '001',
+>>>>>>> 5c54e475b4302bad150259b251ab2af6b438d105
                 name: 'Steven',
                 date: '01/01/2020'
             },
             {
+<<<<<<< HEAD
                 id: '002',
+=======
+                num: '002',
+>>>>>>> 5c54e475b4302bad150259b251ab2af6b438d105
                 name: 'Gary',
                 date: '01/02/2020'
             },
             {
+<<<<<<< HEAD
                 id: '003',
+=======
+                num: '003',
+>>>>>>> 5c54e475b4302bad150259b251ab2af6b438d105
                 name: 'Gus',
                 date: '01/03/2020'
             }
@@ -40,7 +52,11 @@ class CustomerTable extends Component {
         const custTable = testTable.map((c, i) => {
             return (
                 <tr key={i}>
+<<<<<<< HEAD
                     <td><Link to={`/customers/${c.id}`}>{c.id}</Link></td>
+=======
+                    <td><Link to={`/customers/${c.name.toLowerCase()}`}>{c.num}</Link></td>
+>>>>>>> 5c54e475b4302bad150259b251ab2af6b438d105
                     <td>{c.name}</td>
                     <td>{c.date}</td>
                 </tr>
@@ -69,6 +85,7 @@ class CustomerTable extends Component {
                     >
                         Back
                     </Buttons>
+<<<<<<< HEAD
                     <Buttons
                         className="customer-table"
                         tag={Link}
@@ -76,6 +93,8 @@ class CustomerTable extends Component {
                     >
                         Add Customer
                     </Buttons>
+=======
+>>>>>>> 5c54e475b4302bad150259b251ab2af6b438d105
                 </Content>
             </>
         );
