@@ -1,0 +1,19 @@
+/* section {
+    min-height: 200px;
+    padding: 30px 15px;
+    background-color: #ddd;
+} */
+
+.measure-pic {
+    background-color: #fff;
+    min-width: 300px;
+    min-height: 300px;
+    margin: 2% auto;
+}
+
+.measure-instructions {
+}
+/* 
+button {
+    margin: 2% 1%;
+} */
