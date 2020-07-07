@@ -32,11 +32,7 @@ function LandingPage() {
                         <label htmlFor="password" required>Password</label>
                         <input placeholder="1234passw0rd" type="password" id="password" />
                         {/* <button type="submit">Log in</button> */}
-<<<<<<< HEAD
                         <Link to='/customers'><button type="button">Log in</button></Link>
-=======
-                        <Link to='measurement-page/chest'><button type="button">Log in</button></Link>
->>>>>>> 5c54e475b4302bad150259b251ab2af6b438d105
                         </fieldset>
                     </form>
                     <section className="mission">
