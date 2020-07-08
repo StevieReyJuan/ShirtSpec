@@ -72,7 +72,7 @@ class CustomerTable extends Component {
                     <Buttons
                         className="customer-table"
                         tag={Link}
-                        to='/add-customer'   
+                        to='/measurement-page/name'   
                     >
                         Add Customer
                     </Buttons>

@@ -11,7 +11,7 @@ class MeasurementForm extends Component {
         const measurementValue = VALUES.find(v => 
             v.id === measurementId
         )
-
+        
         return (
             <form
                 className={['MeasurementForm', measurementId].join(' ')}
@@ -20,11 +20,18 @@ class MeasurementForm extends Component {
             >
                 <div className="measurement-container form-section">
                     <label htmlFor="measurement-value"></label>
-                    <select defaultValue={measurementValue.values[0]}>
+                    {measurementId === 'name' ? 
+                        <input type='text' required /> :
+                        <select defaultValue={measurementValue.values[0]}>
+                            {measurementValue.values.map(opt => 
+                                <option value={opt} key={opt.toString()}>{opt.toString()}</option>
+                            )}
+                        </select>}
+                    {/* <select defaultValue={measurementValue.values[0]}>
                         {measurementValue.values.map(opt => 
                             <option value={opt} key={opt.toString()}>{opt.toString()}</option>
                         )}
-                    </select>
+                    </select> */}
                 </div>
             </form>
           )

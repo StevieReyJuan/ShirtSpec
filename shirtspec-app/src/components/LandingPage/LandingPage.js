@@ -41,7 +41,7 @@ function LandingPage() {
                 </main>
                 <footer className="footer">
                     <p>New user? <Link to='/register'>SIGN UP</Link></p>
-                    <p>To continue in test mode, start <Link to='measurement-page/chest'>DEMO</Link></p>
+                    <p>To continue in test mode, start <Link to='/customers'>DEMO</Link></p>
                 </footer>
             </Content>
         </>

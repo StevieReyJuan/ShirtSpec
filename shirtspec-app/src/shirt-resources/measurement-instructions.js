@@ -1,4 +1,11 @@
 export default [
+    {   page: 0,
+        id: 'name',
+        name: 'Full Name',
+        image: '',
+        content: 'Welcome'
+
+    },
     {   page: 1,   
         id: 'chest',
         name: 'Chest',

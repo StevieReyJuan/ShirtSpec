@@ -18,6 +18,7 @@ class Sidebar extends Component {
                     (X)
                 </button>
                 <ul className={`sideBar ${this.state.hide ? 'hide' : ''}`}>
+                    <Link to='/measurement-page/name'><li>Name</li></Link>
                     <Link to='/measurement-page/chest'><li>Chest</li></Link>
                     <Link to='/measurement-page/shirt-waist'><li>Shirt Waist</li></Link>
                     <Link to='/measurement-page/yoke'><li>Yoke</li></Link>
