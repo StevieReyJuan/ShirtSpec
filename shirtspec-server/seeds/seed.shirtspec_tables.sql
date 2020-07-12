@@ -7,9 +7,10 @@ TRUNCATE
 
 INSERT INTO shirtspec_stores (user_name, password)
 VALUES
-    ('Drinkwater''s', 'test123'),
-    ('Louis', 'test456'),
-    ('Bergdorf', 'test 789');
+    ('Drinkwater''s', '$2a$12$HVXcTSsccGPgecdJHagUK.b7er3baB81JLPhIlX1Xb/RggbRqlAK.'),
+    ('Louis', '$2a$12$9pj/UQbnU8cioW9bVFlVzeB30xWMqK6F0FMHTlJCcPj5HajvcWNVK'),
+    ('Bergdorf', '$2a$12$6xFPQJmCqfdSOMtPrQMhUOuPkVKsu6ViUK.fPGh/IGTtoAI67MF4.'),
+    ('test', '$2a$12$mRZQbLhTBCsqJpAvA9j0DeWd8iwmNwRhK7E/vM6EIhZ8CfN4/arHu');
 
 INSERT INTO shirtspec_customers (store_id, customer_name, chest, shirt_waist, yoke,
 shaping, left_sleeve, right_sleeve, left_cuff, right_cuff, tail, collar, shoulder_line)
