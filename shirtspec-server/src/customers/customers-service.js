@@ -11,6 +11,7 @@ const CustomersService = {
         return db
             .from('shirtspec_customers')
             .select(
+                'id',
                 'customer_name',
                 'chest',
                 'shirt_waist',

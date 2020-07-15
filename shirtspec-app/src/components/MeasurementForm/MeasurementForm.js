@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import './MeasurementForm.css'
+import MeasurementsContext from '../../context/MeasurementsContext'
 import VALUES from '../../shirt-resources/measurement-values'
 
 class MeasurementForm extends Component {
-    state = {
-        pageNum: 1
+    static contextType = MeasurementsContext
+
+    handleChange = e => {
+        const { target: { name, value } } = e
+        const updatedCustomerMeasurement = {[name]: value}
+        this.context.updateMeasurement(updatedCustomerMeasurement)
+        // console.log(this.context.customer)
     }
+
     render() {
         const { measurementId, ...props } = this.props
         const measurementValue = VALUES.find(v => 
@@ -21,10 +28,14 @@ class MeasurementForm extends Component {
                 <div className="measurement-container form-section">
                     <label htmlFor="measurement-value"></label>
                     {measurementId === 'name' ? 
-                        <input type='text' required /> :
-                        <select defaultValue={measurementValue.values[0]}>
+                        <input onChange={this.handleChange} type='text' name="customer_name" defaultValue={this.context.customer.customer_name} required /> :
+                        <select 
+                            onChange={this.handleChange}
+                            defaultValue={measurementValue.values[0]} 
+                            name={(measurementValue.id).replace(/-/g, "_")}
+                        >
                             {measurementValue.values.map(opt => 
-                                <option value={opt} key={opt.toString()}>{opt.toString()}</option>
+                                <option value={opt} key={opt}>{opt}</option>
                             )}
                         </select>}
                     {/* <select defaultValue={measurementValue.values[0]}>

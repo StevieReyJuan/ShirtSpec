@@ -15,6 +15,7 @@ const serializeCustomer = customer => ({
 })
 
 const serializeMeasurements = customer => ({
+    id: customer.id,
     customer_name: customer.customer_name,
     chest: customer.chest,
     shirt_waist: customer.shirt_waist,

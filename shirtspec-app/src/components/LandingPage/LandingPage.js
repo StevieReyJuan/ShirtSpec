@@ -28,12 +28,20 @@ class LandingPage extends Component {
                 user_name.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
-                this.props.onLoginSuccess() //pass function from app
+                // this.props.onLoginSuccess()
+                this.props.history.push('/customers')
             })
             .catch(res => {
                 this.setState({ error: res.error })
             })
     }
+
+    // handleLoginSuccess = () => {
+    //     const { location, history } = this.props
+    //     const destination = (location.state || {}).from || '/'
+    //     history.push(destination)
+    // }
+
     // const links = [
     //     {
     //         'title': 'test1',
@@ -62,7 +70,7 @@ class LandingPage extends Component {
                             <fieldset name="login-details">
                             <legend>ShirtSpec</legend>
                             <label htmlFor="user_name">Username</label>
-                            <input placeholder="1234" type="number" name="user_name" id="LoginForm_user_name" required/>
+                            <input placeholder="1234" type="text" name="user_name" id="LoginForm_user_name" required/>
     
                             <label htmlFor="password">Password</label>
                             <input placeholder="1234passw0rd" type="password" name="password" id="LoginForm_password" required/>

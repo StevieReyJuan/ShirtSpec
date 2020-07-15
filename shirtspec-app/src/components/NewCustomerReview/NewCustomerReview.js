@@ -1,31 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import './MeasurementReview.css';
+import './NewCustomerReview.css';
 import Navbar from '../Nav/Navbar';
 import Content from '../Content';
 import Buttons from '../Buttons/Buttons'
 import MeasurementsContext from '../../context/MeasurementsContext'
 import ShirtspecApiService from '../../services/api-endpoint-service'
 
-class MeasurementReview extends Component {
-    static defaultProps = {
-        match: { params: {} }
-    }
+class NewCustomerReview extends Component {
+    // static defaultProps = {
+    //     match: { params: {} }
+    // }
 
     static contextType = MeasurementsContext
-
-    componentDidMount() {
-        const { customerId } = this.props.match.params
-        this.context.clearError()
-        ShirtspecApiService.getCustomerById(customerId)
-            // .then(res => console.log(res))
-            .then(this.context.setCustomerDetails)
-            .catch(this.context.setError)
-    }
-
-    // componentWillUnmount() {
-    //     this.context.clearCustomerDetails()
-    // }
 
     render() {
         const { customer } = this.context
@@ -104,19 +91,21 @@ class MeasurementReview extends Component {
                     className="MeasurementReview"
                     tag={Link}
                     to='/customers'
+                    //onClick={POST}
                 >
-                    Back
+                    Discard
                 </Buttons>
                 <Buttons
                     className="MeasurementReview"
                     tag={Link}
-                    to='/measurement-page/chest'
+                    to='/customers'
+                    // onClick={PATCH}
                 >
-                    Edit
+                    Save
                 </Buttons>
             </>
         );
     }
 }
 
-export default MeasurementReview;
+export default NewCustomerReview;

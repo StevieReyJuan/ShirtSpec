@@ -31,30 +31,42 @@ export default [
         content: 'Shaping stuff'
     },
     {   page: 5,
-        id: 'sleeves',
-        name: 'Sleeves',
+        id: 'left-sleeve',
+        name: 'Left Sleeve',
         image: '',
-        content: 'Sleeve stuff'
+        content: 'Left Sleeve stuff'
     },
     {   page: 6,
-        id: 'cuffs',
-        name: 'Cuffs',
+        id: 'right-sleeve',
+        name: 'Right Sleeve',
         image: '',
-        content: 'Cuff stuff'
+        content: 'Right Sleeve stuff'
     },
-    {   page: 6,
+    {   page: 7,
+        id: 'left-cuff',
+        name: 'Left Cuff',
+        image: '',
+        content: 'Left Cuff stuff'
+    },
+    {   page: 8,
+        id: 'right-cuff',
+        name: 'Right Cuff',
+        image: '',
+        content: 'Right Cuff stuff'
+    },
+    {   page: 9,
         id: 'tail',
         name: 'Tail',
         image: '',
         content: 'Tail stuff'
     },
-    {   page: 7,
+    {   page: 10,
         id: 'collar',
         name: 'Collar',
         image: '',
         content: 'collar stuff'
     },
-    {   page: 9,
+    {   page: 11,
         id: 'shoulder-line',
         name: 'Shoulder Line',
         image: '',

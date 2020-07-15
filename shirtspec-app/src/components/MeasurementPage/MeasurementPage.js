@@ -6,9 +6,10 @@ import MeasurementForm from '../MeasurementForm/MeasurementForm'
 import Navbar from '../Nav/Navbar'
 import Sidebar from '../Nav/Sidebar'
 import Buttons from '../Buttons/Buttons'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class MeasurementPage extends Component {
+
     render() {
         const links = [
             {
@@ -20,9 +21,13 @@ class MeasurementPage extends Component {
                 'link': '/test2' 
             }
         ]
+
         const measurementStep = INSTRUCTIONS.find(i => 
             i.id === this.props.match.params.measurementId
         )
+
+        const currentPage = INSTRUCTIONS.indexOf(measurementStep)
+
         return (
             <>
                 <Navbar links={links}/>
@@ -36,20 +41,25 @@ class MeasurementPage extends Component {
                     </section>
                     <section>
                         <MeasurementForm measurementId={measurementStep.id}/>
-                        <Buttons
-                            className="MeasurementPage"
-                            tag={Link}
-                            to='/' //use state for page 
-                        >
-                            Back
-                        </Buttons>
-                        <Buttons
-                            className="MeasurementPage"
-                            tag={Link}
-                            to='/measurement-page/shirt-waist' //use state for page
-                        >
-                            Next
-                        </Buttons>
+                        {currentPage === 0 ? <></>
+                            :   <Buttons
+                                    className="MeasurementPage"
+                                    tag={'button'}
+                                    onClick={() => this.props.history.push(`/measurement-page/${INSTRUCTIONS[currentPage - 1].id}`)}
+                                >
+                                    Back
+                                </Buttons>
+                        
+                        }
+                        {currentPage === 11 ? <></>
+                        :   <Buttons
+                                className="MeasurementPage"
+                                tag={'button'}
+                                onClick={() => this.props.history.push(`/measurement-page/${INSTRUCTIONS[currentPage + 1].id}`)}
+                            >
+                                Next
+                            </Buttons>
+                        }  
                     </section>
                 </Content>
             </>

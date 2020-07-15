@@ -3,9 +3,33 @@ import { Link } from 'react-router-dom'
 import Content from '../Content'
 import Navbar from '../Nav/Navbar'
 import Buttons from '../Buttons/Buttons'
+import MeasurementsContext from '../../context/MeasurementsContext'
+// import CustomersContext from '../../context/CustomersContext'
+// import ShirtspecApiService from '../../services/api-endpoint-service'
 import './CustomerTable.css'
+import CustomerListItem from '../CustomerListItem/CustomerListItem'
 
 class CustomerTable extends Component {
+    static contextType = MeasurementsContext
+
+    // componentDidMount() {
+    //     this.context.clearError()
+    //     ShirtspecApiService.getCustomersForTable()
+    //         // .then(res => console.log(res))
+    //         .then(this.context.setCustomersList)
+    //         .catch(this.context.setError)
+    // }
+
+    // renderCustomers() {
+    //     const { customerList = [] } = this.context
+    //     console.log(customerList)
+    //     return customerList.map(customer => 
+    //         <CustomerListItem 
+    //             key={customer.id}
+    //             customer={customer}
+    //         />
+    //     )
+    // }
 
     render() {
         const links = [
@@ -19,33 +43,7 @@ class CustomerTable extends Component {
             }
         ]
 
-        const testTable = [
-            {
-                id: '001',
-                name: 'Steven',
-                date: '01/01/2020'
-            },
-            {
-                id: '002',
-                name: 'Gary',
-                date: '01/02/2020'
-            },
-            {
-                id: '003',
-                name: 'Gus',
-                date: '01/03/2020'
-            }
-        ]
-
-        const custTable = testTable.map((c, i) => {
-            return (
-                <tr key={i}>
-                    <td><Link to={`/customers/${c.id}`}>{c.id}</Link></td>
-                    <td>{c.name}</td>
-                    <td>{c.date}</td>
-                </tr>
-            )
-        })
+        const { error } = this.context
         return (
             <>
                 <Navbar links={links}/>
@@ -58,21 +56,23 @@ class CustomerTable extends Component {
                                 <th>Date</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {custTable}
-                        </tbody>
+                        {error ? <p>Error! Debug!</p> :
+                        <CustomerListItem />}
                     </table>
                     <Buttons
                         className="customer-table"
-                        tag={Link}
-                        to='/'
+                        tag={'button'}
+                        // to='/'
+                        onClick={() => this.props.history.push('/')}
                     >
                         Back
                     </Buttons>
                     <Buttons
                         className="customer-table"
-                        tag={Link}
-                        to='/measurement-page/name'   
+                        tag={'button'}
+                        // to='/measurement-page/name'
+                        onClick={() => { this.context.clearCustomerDetails();
+                                        this.props.history.push('/measurement-page/name')} }
                     >
                         Add Customer
                     </Buttons>

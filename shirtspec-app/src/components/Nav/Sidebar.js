@@ -23,11 +23,14 @@ class Sidebar extends Component {
                     <Link to='/measurement-page/shirt-waist'><li>Shirt Waist</li></Link>
                     <Link to='/measurement-page/yoke'><li>Yoke</li></Link>
                     <Link to='/measurement-page/shaping'><li>Shaping</li></Link>
-                    <Link to='/measurement-page/sleeves'><li>Sleeves</li></Link>
-                    <Link to='/measurement-page/cuffs'><li>Cuffs</li></Link>
+                    <Link to='/measurement-page/left-sleeve'><li>Left Sleeve</li></Link>
+                    <Link to='/measurement-page/right-sleeves'><li>Right Sleeve</li></Link>
+                    <Link to='/measurement-page/left-cuff'><li>Left Cuff</li></Link>
+                    <Link to='/measurement-page/right-cuff'><li>Right Cuff</li></Link>
                     <Link to='/measurement-page/tail'><li>Tail</li></Link>
                     <Link to='/measurement-page/collar'><li>Collar</li></Link>
                     <Link to='/measurement-page/shoulder-line'><li>Shoulder Line</li></Link>
+                    <Link to='/review-submit'><li>Review/Submit</li></Link>
                 </ul>
             </div>
         )
