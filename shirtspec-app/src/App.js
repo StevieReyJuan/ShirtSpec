@@ -9,6 +9,7 @@ import LandingPage from './components/LandingPage/LandingPage';
 import MeasurementReview from './components/MeasurementReview/MeasurementReview';
 import SignUpPage from './components/SignUpPage/SignUpPage';
 import NewCustomerReview from './components/NewCustomerReview/NewCustomerReview';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 class App extends Component {
   state = { hasError: false }
@@ -26,6 +27,7 @@ class App extends Component {
         <header>
         </header>
         <main>
+          {this.state.hasError && <p>ERROR</p>}
           <Switch>
             <Route exact path='/' component={LandingPage} />
             <Route path='/register' component={SignUpPage} />
@@ -33,7 +35,7 @@ class App extends Component {
             <Route path='/customers/:customerId' component={MeasurementReview} />
             <Route path='/review-submit' component={NewCustomerReview} />
             <PrivateRoute path='/customers' component={CustomerTable} />
-
+            <Route component={NotFoundPage} />
           </Switch>
         </main>
         <footer>

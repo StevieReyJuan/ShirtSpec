@@ -82,12 +82,10 @@ customersRouter
     .all(requireAuth)
     .all(checkCustomerExists)
     .get((req, res, next) => {
-        // const { store_id } = req.user.id
         CustomersService.getCustomerMeasurements(
             req.app.get('db'), req.params.customer_id
         )
             .then(customer => {
-                // console.log(customer)
                 res.json(serializeMeasurements(customer))
             })
             .catch(next)
@@ -95,14 +93,14 @@ customersRouter
     .patch(jsonBodyParser, (req, res, next) => {
         const 
             {   
-                chest, shirt_waist, yoke, shaping, 
+                customer_name, chest, shirt_waist, yoke, shaping, 
                 left_sleeve, right_sleeve, left_cuff, right_cuff,
                 tail, collar, shoulder_line
             } = req.body
 
         const measurementsToUpdate =    
             {
-                chest, shirt_waist, yoke, shaping, 
+                customer_name, chest, shirt_waist, yoke, shaping, 
                 left_sleeve, right_sleeve, left_cuff, right_cuff,
                 tail, collar, shoulder_line
             }
@@ -112,18 +110,26 @@ customersRouter
         if (numberOfValues.length === 0) {
             return res.status(400).json({
                 error: {
-                    message: `Request body must include any of 'chest', 'shirt waist', 'yoke', 'shaping', 'sleeve', 'cuff', 'tail', 'collar', or 'shoulder line'.`
+                    message: `Request body must include any of 'name, chest', 'shirt waist', 'yoke', 'shaping', 'sleeve', 'cuff', 'tail', 'collar', or 'shoulder line'.`
                 }
             })
         }
 
+        measurementsToUpdate.store_id = req.user.id
         measurementsToUpdate.date_modified = new Date()
 
         CustomersService.updateCustomerMeasurements(
             req.app.get('db'), req.params.customer_id, measurementsToUpdate
         )
-            .then(numRowsAffected => {
-                res.status(204).end()
+            // .then(numRowsAffected => {
+            //     res.status(204).end()
+            // })
+            // .catch(next)
+            .then(customer => {
+                res
+                    .status(201)
+                    .location(path.posix.join(req.originalUrl, `/${customer.id}`))
+                    .json(CustomersService.serializeNewCustomer(customer))
             })
             .catch(next)
     })

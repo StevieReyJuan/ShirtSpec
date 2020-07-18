@@ -1,6 +1,6 @@
 export default [
     {   page: 0,
-        id: 'name',
+        id: 'customer-name',
         name: 'Full Name',
         image: '',
         content: 'Welcome'

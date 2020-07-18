@@ -33,9 +33,10 @@ const ShirtspecApiService = {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        customerDetails
-      }),
+      body: JSON.stringify(customerDetails),
+      // body: JSON.stringify({
+      //   customerDetails
+      // }),
     })
       .then(res =>
         (!res.ok)
@@ -50,9 +51,10 @@ const ShirtspecApiService = {
         'content-type': 'application/json',
         'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
-      body: JSON.stringify({
-        customerDetails
-      }),
+      body: JSON.stringify(customerDetails),
+      // body: JSON.stringify({
+      //   customerDetails
+      // }),
     })
       .then(res =>
         (!res.ok)

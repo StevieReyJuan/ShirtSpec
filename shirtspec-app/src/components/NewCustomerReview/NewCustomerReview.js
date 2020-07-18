@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import './NewCustomerReview.css';
 import Navbar from '../Nav/Navbar';
 import Content from '../Content';
@@ -13,6 +13,24 @@ class NewCustomerReview extends Component {
     // }
 
     static contextType = MeasurementsContext
+
+    saveCustomer = customer => {
+        if (typeof customer.id === 'undefined') {
+            ShirtspecApiService.postCustomer(customer)
+                .then(newCustomer => {
+                    this.props.history.push(`/customers/${newCustomer.id}`)
+                    this.context.clearCustomerDetails()
+                })
+                .catch(this.context.setError)
+        }   else {
+                    ShirtspecApiService.updateCustomer(customer.id, customer)
+                        .then(customer => {
+                        this.props.history.push(`/customers/${customer.id}`)
+                        this.context.clearCustomerDetails()
+                        })
+                        .catch(this.context.setError)
+                }
+    }     
 
     render() {
         const { customer } = this.context
@@ -32,9 +50,11 @@ class NewCustomerReview extends Component {
             <>
                 <Navbar links={links}/>
                 <Content className="review-table">
+                    <h2>{customer.customer_name}</h2>
                     <table>
                         <thead>
                             <tr>
+                                <td>Name</td>
                                 <td>Chest</td>
                                 <td>Shirt Waist</td>
                                 <td>Yoke</td>
@@ -49,7 +69,11 @@ class NewCustomerReview extends Component {
                             </tr>
                         </thead>
                         <tbody>
+                            {/* TODO: loop */}
                             <tr>
+                                <td>
+                                    <span id="customer-name">{customer.customer_name}</span>
+                                </td>
                                 <td>
                                     <span id="chest">{customer.chest}</span>
                                 </td>
@@ -89,20 +113,33 @@ class NewCustomerReview extends Component {
                 </Content>
                 <Buttons
                     className="MeasurementReview"
-                    tag={Link}
-                    to='/customers'
-                    //onClick={POST}
+                    tag={'button'}
+                    onClick={() => {
+                        this.props.history.goBack()
+                    }}
+                >
+                    Back
+                </Buttons>
+                <Buttons
+                    className="MeasurementReview"
+                    tag={'button'}
+                    onClick={() => {
+                        this.context.clearCustomerDetails();
+                        this.props.history.push('/customers')
+                    }}
                 >
                     Discard
                 </Buttons>
                 <Buttons
                     className="MeasurementReview"
-                    tag={Link}
-                    to='/customers'
-                    // onClick={PATCH}
+                    tag={'button'}
+                    onClick={() => {
+                        this.saveCustomer(customer);
+                    }}
                 >
                     Save
                 </Buttons>
+                {this.context.error ? <p>Uh oh! Something went wrong!</p> : <></>}
             </>
         );
     }

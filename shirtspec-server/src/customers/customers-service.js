@@ -67,7 +67,11 @@ const CustomersService = {
             .from('shirtspec_customers')
             .where({ id })
             .update(UpdatedMeasurementFields)
-    }
+            .returning('*')
+            .then(([customer]) => customer)
+            .then(customer => 
+                CustomersService.getById(db, customer.id))
+    },
 
 }
 

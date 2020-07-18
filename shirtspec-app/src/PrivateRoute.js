@@ -22,8 +22,3 @@ export default function PrivateRoute({ component, ...props }) {
         />
     )
 }
-
-{/* <PrivateRoute
-    path={'/example/:exampleId'}
-    component={ComponentName}
-/> */}

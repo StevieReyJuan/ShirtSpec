@@ -6,7 +6,7 @@ import MeasurementForm from '../MeasurementForm/MeasurementForm'
 import Navbar from '../Nav/Navbar'
 import Sidebar from '../Nav/Sidebar'
 import Buttons from '../Buttons/Buttons'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class MeasurementPage extends Component {
 
@@ -51,7 +51,16 @@ class MeasurementPage extends Component {
                                 </Buttons>
                         
                         }
-                        {currentPage === 11 ? <></>
+                        {currentPage === 11 ?
+                            <Buttons
+                                className="MeasurementPage"
+                                // tag={Link}
+                                // to={'/review-submit'}
+                                tag={'button'}
+                                onClick={() => this.props.history.push('/review-submit')}
+                            >
+                                Review
+                            </Buttons>
                         :   <Buttons
                                 className="MeasurementPage"
                                 tag={'button'}
@@ -59,7 +68,7 @@ class MeasurementPage extends Component {
                             >
                                 Next
                             </Buttons>
-                        }  
+                        }
                     </section>
                 </Content>
             </>

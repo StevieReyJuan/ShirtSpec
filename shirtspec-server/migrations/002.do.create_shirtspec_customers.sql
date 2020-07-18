@@ -5,21 +5,23 @@ CREATE TABLE shirtspec_customers (
     date_modified TIMESTAMP DEFAULT now() NOT NULL,
     chest INTEGER NOT NULL,
     shirt_waist INTEGER NOT NULL,
-    yoke DECIMAL(4,2),
+    yoke DECIMAL(4,2) NOT NULL,
     shaping INTEGER NOT NULL,
-    left_sleeve DECIMAL(4,2),
-    right_sleeve DECIMAL(4,2),
-    left_cuff DECIMAL(4,2),
-    right_cuff DECIMAL(4,2),
+    left_sleeve DECIMAL(4,2) NOT NULL,
+    right_sleeve DECIMAL(4,2) NOT NULL,
+    left_cuff DECIMAL(4,2) NOT NULL,
+    right_cuff DECIMAL(4,2) NOT NULL,
     tail INTEGER NOT NULL,
-    collar DECIMAL(4,2)
+    collar DECIMAL(4,2) NOT NULL
 );
 
 CREATE TYPE shoulder_line AS ENUM (
     'regular',
     'square',
     'slope',
-    'exteme-slope'
+    'exteme-slope',
+    'drop-right',
+    'drop-left'
 );
 
 ALTER TABLE shirtspec_customers ADD COLUMN shoulder_line shoulder_line;

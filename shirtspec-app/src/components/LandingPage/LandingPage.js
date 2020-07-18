@@ -42,22 +42,16 @@ class LandingPage extends Component {
     //     history.push(destination)
     // }
 
-    // const links = [
-    //     {
-    //         'title': 'test1',
-    //         'link': '/test1'
-    //     },
-    //     {
-    //         'title': 'test2',
-    //         'link': '/test2' 
-    //     }
-    // ]
+    testModeCredentials = () => {
+        document.getElementById('LoginForm_user_name').value = 'test'
+        document.getElementById('LoginForm_password').value = 'test'
+        //autosubmit?
+    }
+
     render() {
         const { error } =this.state
-        //prep form inputs for user_name, password vals and submits
         return(
             <>
-                {/* <Navbar links={links}></Navbar> */}
                 <Content className='LandingPage'>
                     <header>
                         <img className="logo" src="" alt="IS Logo" />
@@ -65,7 +59,9 @@ class LandingPage extends Component {
                     <main>
                         <form 
                             className="login-form"
+                            id="login-form"
                             onSubmit={this.handleSubmitJwtAuth}
+                            
                         >
                             <fieldset name="login-details">
                             <legend>ShirtSpec</legend>
@@ -75,7 +71,6 @@ class LandingPage extends Component {
                             <label htmlFor="password">Password</label>
                             <input placeholder="1234passw0rd" type="password" name="password" id="LoginForm_password" required/>
                             <button type="submit">Log in</button>
-                            {/* <Link to='/customers'><button type="button">Log in</button></Link> */}
                             </fieldset>
                         </form>
                         <section className="mission">
@@ -84,7 +79,7 @@ class LandingPage extends Component {
                     </main>
                     <footer className="footer">
                         <p>New user? <Link to='/register'>SIGN UP</Link></p>
-                        <p>To continue in test mode, start <Link to='/customers'>DEMO</Link></p>
+                        <p>To continue in test mode, <button onClick={() => this.testModeCredentials()}>FILL</button> test credentials</p>
                     </footer>
                 </Content>
             </>

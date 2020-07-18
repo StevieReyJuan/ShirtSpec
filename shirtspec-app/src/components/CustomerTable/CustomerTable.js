@@ -1,35 +1,13 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Content from '../Content'
 import Navbar from '../Nav/Navbar'
 import Buttons from '../Buttons/Buttons'
 import MeasurementsContext from '../../context/MeasurementsContext'
-// import CustomersContext from '../../context/CustomersContext'
-// import ShirtspecApiService from '../../services/api-endpoint-service'
 import './CustomerTable.css'
 import CustomerListItem from '../CustomerListItem/CustomerListItem'
 
 class CustomerTable extends Component {
     static contextType = MeasurementsContext
-
-    // componentDidMount() {
-    //     this.context.clearError()
-    //     ShirtspecApiService.getCustomersForTable()
-    //         // .then(res => console.log(res))
-    //         .then(this.context.setCustomersList)
-    //         .catch(this.context.setError)
-    // }
-
-    // renderCustomers() {
-    //     const { customerList = [] } = this.context
-    //     console.log(customerList)
-    //     return customerList.map(customer => 
-    //         <CustomerListItem 
-    //             key={customer.id}
-    //             customer={customer}
-    //         />
-    //     )
-    // }
 
     render() {
         const links = [
@@ -56,13 +34,12 @@ class CustomerTable extends Component {
                                 <th>Date</th>
                             </tr>
                         </thead>
-                        {error ? <p>Error! Debug!</p> :
-                        <CustomerListItem />}
+                        <CustomerListItem />
                     </table>
+                    {error && <p>Oops! Can't load customers</p>}
                     <Buttons
                         className="customer-table"
                         tag={'button'}
-                        // to='/'
                         onClick={() => this.props.history.push('/')}
                     >
                         Back
@@ -70,9 +47,8 @@ class CustomerTable extends Component {
                     <Buttons
                         className="customer-table"
                         tag={'button'}
-                        // to='/measurement-page/name'
                         onClick={() => { this.context.clearCustomerDetails();
-                                        this.props.history.push('/measurement-page/name')} }
+                                        this.props.history.push('/measurement-page/customer-name')} }
                     >
                         Add Customer
                     </Buttons>

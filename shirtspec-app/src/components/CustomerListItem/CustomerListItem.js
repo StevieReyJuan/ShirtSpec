@@ -9,14 +9,12 @@ export default class CustomerListItem extends Component {
     componentDidMount() {
         this.context.clearError()
         ShirtspecApiService.getCustomersForTable()
-            // .then(res => console.log(res))
             .then(this.context.setCustomersList)
             .catch(this.context.setError)
     }
 
     renderCustomers() {
         const { customerList = [] } = this.context
-        console.log(customerList)
         return customerList.map(customer => 
             <tr key={customer.id}>
                 <td><Link to={`/customers/${customer.id}`}>{customer.id}</Link></td>

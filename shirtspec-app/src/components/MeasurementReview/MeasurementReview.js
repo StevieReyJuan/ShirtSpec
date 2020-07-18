@@ -18,17 +18,12 @@ class MeasurementReview extends Component {
         const { customerId } = this.props.match.params
         this.context.clearError()
         ShirtspecApiService.getCustomerById(customerId)
-            // .then(res => console.log(res))
             .then(this.context.setCustomerDetails)
             .catch(this.context.setError)
     }
 
-    // componentWillUnmount() {
-    //     this.context.clearCustomerDetails()
-    // }
-
     render() {
-        const { customer } = this.context
+        const { customer, error } = this.context
 
         const links = [
             {
@@ -45,6 +40,8 @@ class MeasurementReview extends Component {
             <>
                 <Navbar links={links}/>
                 <Content className="review-table">
+                    {error ? <p>Customer cannot be retrieved</p>
+                    : <h2>{customer.customer_name}</h2>}
                     <table>
                         <thead>
                             <tr>
@@ -63,6 +60,7 @@ class MeasurementReview extends Component {
                         </thead>
                         <tbody>
                             <tr>
+                                {/* TODO: loop */}
                                 <td>
                                     <span id="chest">{customer.chest}</span>
                                 </td>
