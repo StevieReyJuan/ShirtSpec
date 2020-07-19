@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import Content from '../Content'
 import Navbar from '../Nav/Navbar'
 import Buttons from '../Buttons/Buttons'
+import MeasurementsContext from '../../context/MeasurementsContext'
 import './CustomerTable.css'
+import CustomerListItem from '../CustomerListItem/CustomerListItem'
 
 class CustomerTable extends Component {
+    static contextType = MeasurementsContext
 
     render() {
         const links = [
@@ -19,33 +21,7 @@ class CustomerTable extends Component {
             }
         ]
 
-        const testTable = [
-            {
-                id: '001',
-                name: 'Steven',
-                date: '01/01/2020'
-            },
-            {
-                id: '002',
-                name: 'Gary',
-                date: '01/02/2020'
-            },
-            {
-                id: '003',
-                name: 'Gus',
-                date: '01/03/2020'
-            }
-        ]
-
-        const custTable = testTable.map((c, i) => {
-            return (
-                <tr key={i}>
-                    <td><Link to={`/customers/${c.id}`}>{c.id}</Link></td>
-                    <td>{c.name}</td>
-                    <td>{c.date}</td>
-                </tr>
-            )
-        })
+        const { error } = this.context
         return (
             <>
                 <Navbar links={links}/>
@@ -58,21 +34,21 @@ class CustomerTable extends Component {
                                 <th>Date</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {custTable}
-                        </tbody>
+                        <CustomerListItem />
                     </table>
+                    {error && <p>Oops! Can't load customers</p>}
                     <Buttons
                         className="customer-table"
-                        tag={Link}
-                        to='/'
+                        tag={'button'}
+                        onClick={() => this.props.history.push('/')}
                     >
                         Back
                     </Buttons>
                     <Buttons
                         className="customer-table"
-                        tag={Link}
-                        to='/add-customer'   
+                        tag={'button'}
+                        onClick={() => { this.context.clearCustomerDetails();
+                                        this.props.history.push('/measurement-page/customer-name')} }
                     >
                         Add Customer
                     </Buttons>

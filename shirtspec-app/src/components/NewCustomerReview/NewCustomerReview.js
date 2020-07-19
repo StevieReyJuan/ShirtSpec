@@ -1,29 +1,39 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import './MeasurementReview.css';
+// import { Link } from 'react-router-dom';
+import './NewCustomerReview.css';
 import Navbar from '../Nav/Navbar';
 import Content from '../Content';
 import Buttons from '../Buttons/Buttons'
 import MeasurementsContext from '../../context/MeasurementsContext'
 import ShirtspecApiService from '../../services/api-endpoint-service'
 
-class MeasurementReview extends Component {
-    static defaultProps = {
-        match: { params: {} }
-    }
+class NewCustomerReview extends Component {
+    // static defaultProps = {
+    //     match: { params: {} }
+    // }
 
     static contextType = MeasurementsContext
 
-    componentDidMount() {
-        const { customerId } = this.props.match.params
-        this.context.clearError()
-        ShirtspecApiService.getCustomerById(customerId)
-            .then(this.context.setCustomerDetails)
-            .catch(this.context.setError)
-    }
+    saveCustomer = customer => {
+        if (typeof customer.id === 'undefined') {
+            ShirtspecApiService.postCustomer(customer)
+                .then(newCustomer => {
+                    this.props.history.push(`/customers/${newCustomer.id}`)
+                    this.context.clearCustomerDetails()
+                })
+                .catch(this.context.setError)
+        }   else {
+                    ShirtspecApiService.updateCustomer(customer.id, customer)
+                        .then(customer => {
+                        this.props.history.push(`/customers/${customer.id}`)
+                        this.context.clearCustomerDetails()
+                        })
+                        .catch(this.context.setError)
+                }
+    }     
 
     render() {
-        const { customer, error } = this.context
+        const { customer } = this.context
 
         const links = [
             {
@@ -40,11 +50,11 @@ class MeasurementReview extends Component {
             <>
                 <Navbar links={links}/>
                 <Content className="review-table">
-                    {error ? <p>Customer cannot be retrieved</p>
-                    : <h2>{customer.customer_name}</h2>}
+                    <h2>{customer.customer_name}</h2>
                     <table>
                         <thead>
                             <tr>
+                                <td>Name</td>
                                 <td>Chest</td>
                                 <td>Shirt Waist</td>
                                 <td>Yoke</td>
@@ -59,8 +69,11 @@ class MeasurementReview extends Component {
                             </tr>
                         </thead>
                         <tbody>
+                            {/* TODO: loop */}
                             <tr>
-                                {/* TODO: loop */}
+                                <td>
+                                    <span id="customer-name">{customer.customer_name}</span>
+                                </td>
                                 <td>
                                     <span id="chest">{customer.chest}</span>
                                 </td>
@@ -100,21 +113,36 @@ class MeasurementReview extends Component {
                 </Content>
                 <Buttons
                     className="MeasurementReview"
-                    tag={Link}
-                    to='/customers'
+                    tag={'button'}
+                    onClick={() => {
+                        this.props.history.goBack()
+                    }}
                 >
                     Back
                 </Buttons>
                 <Buttons
                     className="MeasurementReview"
-                    tag={Link}
-                    to='/measurement-page/chest'
+                    tag={'button'}
+                    onClick={() => {
+                        this.context.clearCustomerDetails();
+                        this.props.history.push('/customers')
+                    }}
                 >
-                    Edit
+                    Discard
                 </Buttons>
+                <Buttons
+                    className="MeasurementReview"
+                    tag={'button'}
+                    onClick={() => {
+                        this.saveCustomer(customer);
+                    }}
+                >
+                    Save
+                </Buttons>
+                {this.context.error ? <p>Uh oh! Something went wrong! Make sure you've filled all measurements.</p> : <></>}
             </>
         );
     }
 }
 
-export default MeasurementReview;
+export default NewCustomerReview;

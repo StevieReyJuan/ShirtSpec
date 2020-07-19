@@ -1,16 +1,27 @@
 import React, { Component } from 'react'
 import './MeasurementForm.css'
+import MeasurementsContext from '../../context/MeasurementsContext'
 import VALUES from '../../shirt-resources/measurement-values'
 
 class MeasurementForm extends Component {
+    static contextType = MeasurementsContext
+
     state = {
-        pageNum: 1
+        selectedValue: null
     }
+
+    handleChange = e => {
+        const { target: { name, value } } = e
+        const updatedCustomerMeasurement = {[name]: value}
+        this.context.updateMeasurement(updatedCustomerMeasurement)
+    }
+
     render() {
         const { measurementId, ...props } = this.props
         const measurementValue = VALUES.find(v => 
             v.id === measurementId
         )
+        const formattedName = (measurementValue.id).replace(/-/g, "_")
 
         return (
             <form
@@ -20,11 +31,16 @@ class MeasurementForm extends Component {
             >
                 <div className="measurement-container form-section">
                     <label htmlFor="measurement-value"></label>
-                    <select defaultValue={measurementValue.values[0]}>
-                        {measurementValue.values.map(opt => 
-                            <option value={opt} key={opt.toString()}>{opt.toString()}</option>
-                        )}
-                    </select>
+                    {measurementId === 'customer-name' 
+                        ? 
+                            <input onChange={this.handleChange} type='text' name="customer_name" defaultValue={this.context.customer.customer_name} required /> 
+                        :
+                            <select onChange={this.handleChange} name={formattedName} defaultValue={this.state.selectedValue}>
+                                    <option value={null}></option>
+                                {measurementValue.values.map(opt => 
+                                    <option value={opt} key={opt}>{opt}</option>
+                                )}
+                            </select>}
                 </div>
             </form>
           )
