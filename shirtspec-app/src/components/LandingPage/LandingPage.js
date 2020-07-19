@@ -78,7 +78,7 @@ class LandingPage extends Component {
                         </section>
                     </main>
                     <footer className="footer">
-                        {error && <p>{error}</p>}
+                        {error && <p>{error.message}</p>}
                         <p>New user? <Link to='/register'>SIGN UP</Link></p>
                         <p>To continue in test mode, <button onClick={() => this.testModeCredentials()}>FILL</button> test credentials</p>
                     </footer>
