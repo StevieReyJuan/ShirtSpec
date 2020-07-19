@@ -74,10 +74,11 @@ class LandingPage extends Component {
                             </fieldset>
                         </form>
                         <section className="mission">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.</p>
+                            <p>ShirtSpec is a measurement companion app for Individualized Shirts retail partners. Follow step-by-step instructions to measure a client and keep existing customers for future opportunities.</p>
                         </section>
                     </main>
                     <footer className="footer">
+                        {error && <p>{error}</p>}
                         <p>New user? <Link to='/register'>SIGN UP</Link></p>
                         <p>To continue in test mode, <button onClick={() => this.testModeCredentials()}>FILL</button> test credentials</p>
                     </footer>

@@ -16,60 +16,60 @@ export default [
         id: 'shirt-waist',
         name: 'Shirt Waist',
         image: '',
-        content: 'Shirt waist stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 3,
         id: 'yoke',
         name: 'Yoke',
         image: '',
-        content: 'Yoke stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 4,
         id: 'shaping',
         name: 'Shaping',
         image: '',
-        content: 'Shaping stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 5,
         id: 'left-sleeve',
         name: 'Left Sleeve',
         image: '',
-        content: 'Left Sleeve stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 6,
         id: 'right-sleeve',
         name: 'Right Sleeve',
         image: '',
-        content: 'Right Sleeve stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 7,
         id: 'left-cuff',
         name: 'Left Cuff',
         image: '',
-        content: 'Left Cuff stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 8,
         id: 'right-cuff',
         name: 'Right Cuff',
         image: '',
-        content: 'Right Cuff stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 9,
         id: 'tail',
         name: 'Tail',
         image: '',
-        content: 'Tail stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 10,
         id: 'collar',
         name: 'Collar',
         image: '',
-        content: 'collar stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
     {   page: 11,
         id: 'shoulder-line',
         name: 'Shoulder Line',
         image: '',
-        content: 'Shoulder line stuff'
+        content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur cumque perferendis expedita illo earum minus inventore vitae, eveniet magni doloribus veniam repellat dicta tempora tenetur quo deleniti repudiandae sunt perspiciatis.'
     },
 ]

@@ -6,6 +6,10 @@ import VALUES from '../../shirt-resources/measurement-values'
 class MeasurementForm extends Component {
     static contextType = MeasurementsContext
 
+    state = {
+        selectedValue: null
+    }
+
     handleChange = e => {
         const { target: { name, value } } = e
         const updatedCustomerMeasurement = {[name]: value}
@@ -31,7 +35,8 @@ class MeasurementForm extends Component {
                         ? 
                             <input onChange={this.handleChange} type='text' name="customer_name" defaultValue={this.context.customer.customer_name} required /> 
                         :
-                            <select onChange={this.handleChange} name={formattedName}>
+                            <select onChange={this.handleChange} name={formattedName} defaultValue={this.state.selectedValue}>
+                                    <option value={null}></option>
                                 {measurementValue.values.map(opt => 
                                     <option value={opt} key={opt}>{opt}</option>
                                 )}

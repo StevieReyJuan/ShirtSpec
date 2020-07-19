@@ -6,7 +6,7 @@ import MeasurementForm from '../MeasurementForm/MeasurementForm'
 import Navbar from '../Nav/Navbar'
 import Sidebar from '../Nav/Sidebar'
 import Buttons from '../Buttons/Buttons'
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class MeasurementPage extends Component {
 

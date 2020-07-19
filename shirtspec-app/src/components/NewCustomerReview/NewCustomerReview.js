@@ -139,7 +139,7 @@ class NewCustomerReview extends Component {
                 >
                     Save
                 </Buttons>
-                {this.context.error ? <p>Uh oh! Something went wrong!</p> : <></>}
+                {this.context.error ? <p>Uh oh! Something went wrong! Make sure you've filled all measurements.</p> : <></>}
             </>
         );
     }
