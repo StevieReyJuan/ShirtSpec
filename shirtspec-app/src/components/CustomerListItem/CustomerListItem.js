@@ -17,9 +17,9 @@ export default class CustomerListItem extends Component {
         const { customerList = [] } = this.context
         return customerList.map(customer => 
             <tr key={customer.id}>
-                <td><Link to={`/customers/${customer.id}`}>{customer.id}</Link></td>
-                <td>{customer.customer_name}</td>
-                <td>{customer.date_modified}</td>
+                <td data-label='customer id'><Link to={`/customers/${customer.id}`}>{customer.id}</Link></td>
+                <td data-label='name'>{customer.customer_name}</td>
+                <td data-label='date modified'>{customer.date_modified}</td>
             </tr>
         )
     }

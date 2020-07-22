@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import './NewCustomerReview.css';
-import Navbar from '../Nav/Navbar';
+import StaticToolbar from '../Navbar/Toolbar/StaticToolbar'
 import Content from '../Content';
 import Buttons from '../Buttons/Buttons'
 import MeasurementsContext from '../../context/MeasurementsContext'
@@ -36,26 +35,15 @@ class NewCustomerReview extends Component {
     render() {
         const { customer } = this.context
 
-        const links = [
-            {
-                'title': 'test1',
-                'link': '/test1'
-            },
-            {
-                'title': 'test2',
-                'link': '/test2' 
-            }
-        ]
-
         return (
             <>
-                <Navbar links={links}/>
-                {/* <Content className="review-table"> */}
+                <StaticToolbar />
+                <Content className="review-table">
                     <h2>{customer.customer_name}</h2>
                     <MeasurementTable customer={customer} className='new-customer' />
-                {/* </Content> */}
+                </Content>
                 <Buttons
-                    className="MeasurementReview"
+                    className="measurement-review"
                     tag={'button'}
                     onClick={() => {
                         this.props.history.goBack()
@@ -64,7 +52,7 @@ class NewCustomerReview extends Component {
                     Back
                 </Buttons>
                 <Buttons
-                    className="MeasurementReview"
+                    className="measurement-review"
                     tag={'button'}
                     onClick={() => {
                         this.context.clearCustomerDetails();
@@ -74,7 +62,7 @@ class NewCustomerReview extends Component {
                     Discard
                 </Buttons>
                 <Buttons
-                    className="MeasurementReview"
+                    className="measurement-review"
                     tag={'button'}
                     onClick={() => {
                         this.saveCustomer(customer);

@@ -3,24 +3,13 @@ import Content from '../Content'
 import INSTRUCTIONS from '../../shirt-resources/measurement-instructions'
 import './MeasurementPage.css'
 import MeasurementForm from '../MeasurementForm/MeasurementForm'
-import Navbar from '../Nav/Navbar'
-import Sidebar from '../Nav/Sidebar'
 import Buttons from '../Buttons/Buttons'
+import ResponsiveNavbar from '../Navbar/ResponsiveNavbar'
 // import { Link } from 'react-router-dom';
 
 class MeasurementPage extends Component {
 
     render() {
-        const links = [
-            {
-                'title': 'Customers',
-                'link': '/customers'
-            },
-            {
-                'title': 'test2',
-                'link': '/test2' 
-            }
-        ]
 
         const measurementStep = INSTRUCTIONS.find(i => 
             i.id === this.props.match.params.measurementId
@@ -30,11 +19,11 @@ class MeasurementPage extends Component {
 
         return (
             <>
-                <Navbar links={links}/>
-                <Sidebar />
-                <Content className='MeasurementPage'>
+                <ResponsiveNavbar />
+                <Content className='measurement-page'>
                     <section>
                         <header>
+                            <h1>{measurementStep.name}</h1>
                             <img className="measure-pic" src={measurementStep.image} alt="Measurement demonstration" />
                             <p className="measure-instructions">{measurementStep.content}</p>
                         </header>
@@ -43,7 +32,7 @@ class MeasurementPage extends Component {
                         <MeasurementForm measurementId={measurementStep.id}/>
                         {currentPage === 0 ? <></>
                             :   <Buttons
-                                    className="MeasurementPage"
+                                    className="measurement-page"
                                     tag={'button'}
                                     onClick={() => this.props.history.push(`/measurement-page/${INSTRUCTIONS[currentPage - 1].id}`)}
                                 >
@@ -53,16 +42,14 @@ class MeasurementPage extends Component {
                         }
                         {currentPage === 11 ?
                             <Buttons
-                                className="MeasurementPage"
-                                // tag={Link}
-                                // to={'/review-submit'}
+                                className="measurement-page"
                                 tag={'button'}
                                 onClick={() => this.props.history.push('/review-submit')}
                             >
                                 Review
                             </Buttons>
                         :   <Buttons
-                                className="MeasurementPage"
+                                className="measurement-page"
                                 tag={'button'}
                                 onClick={() => this.props.history.push(`/measurement-page/${INSTRUCTIONS[currentPage + 1].id}`)}
                             >

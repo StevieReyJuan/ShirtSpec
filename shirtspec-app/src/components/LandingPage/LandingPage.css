@@ -8,6 +8,14 @@
     font-size: 20px;
   } */
 
+  .content.landing-page {
+    margin-top: 0;
+  }
+
+  .landing-page section {
+    padding: 30px 15px;
+  }
+
   fieldset {
     padding: 0;
     margin-left: 0;
@@ -44,6 +52,8 @@
   }
 
   .login-form button {
+    /* border: 1px solid #aaa;
+    border-radius: 3px; */
     display: block;
     width: 100%;
     height: auto;

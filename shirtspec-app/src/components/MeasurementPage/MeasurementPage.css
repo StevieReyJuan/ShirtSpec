@@ -1,8 +1,6 @@
-/* section {
-    min-height: 200px;
-    padding: 30px 15px;
-    background-color: #ddd;
-} */
+.content.measurement-page {
+    margin-top: 125px;
+}
 
 .measure-pic {
     background-color: #fff;
@@ -13,7 +11,7 @@
 
 .measure-instructions {
 }
-/* 
-button {
-    margin: 2% 1%;
-} */
+
+.measurement-page h1 {
+    padding: 10px;
+}

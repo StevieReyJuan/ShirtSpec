@@ -8,7 +8,7 @@ function Buttons(props) {
     return React.createElement(
         tag,
         {
-            ...otherProps, className: ['ButtonBar', className].join(' ')
+            ...otherProps, className: ['btn', className].join(' ')
         },
         children
     )

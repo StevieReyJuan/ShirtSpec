@@ -1,7 +1,7 @@
 export default [
     {   page: 0,
         id: 'customer-name',
-        name: 'Full Name',
+        name: 'Customer Name',
         image: '',
         content: 'Welcome'
 

@@ -11,7 +11,10 @@ class MeasurementForm extends Component {
     }
 
     handleChange = e => {
-        const { target: { name, value } } = e
+        let { target: { name, value } } = e
+        if (name !== 'shoulder_line' && name !== 'customer_name') {
+            value = parseFloat(value);
+        }
         const updatedCustomerMeasurement = {[name]: value}
         this.context.updateMeasurement(updatedCustomerMeasurement)
     }
@@ -22,6 +25,16 @@ class MeasurementForm extends Component {
             v.id === measurementId
         )
         const formattedName = (measurementValue.id).replace(/-/g, "_")
+
+        let value = this.context.customer[formattedName]
+
+        if (formattedName !== 'shoulder_line' && formattedName !== 'customer_name') {
+            value = parseFloat(this.context.customer[formattedName])
+        }
+
+        if (!value) {
+            value = '';
+        }
 
         return (
             <form
@@ -35,10 +48,10 @@ class MeasurementForm extends Component {
                         ? 
                             <input onChange={this.handleChange} type='text' name="customer_name" defaultValue={this.context.customer.customer_name} required /> 
                         :
-                            <select onChange={this.handleChange} name={formattedName} defaultValue={this.state.selectedValue}>
-                                    <option value={null}></option>
+                            <select value={value} onChange={this.handleChange} name={formattedName}>
+                                    <option value={''}></option>
                                 {measurementValue.values.map(opt => 
-                                    <option value={opt} key={opt}>{opt}</option>
+                                    <option value={formattedName=='shoulder_line' ? opt : parseFloat(opt)} key={opt}>{opt}</option>
                                 )}
                             </select>}
                 </div>

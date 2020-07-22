@@ -1,14 +1,15 @@
-@media only screen and (max-width: 768px) { 
+@media only screen and (max-width: 999px) { 
     /* Maybe 500px? */
-    .responsive-table {
+    table {
         width: 80%;
+        max-width: 400px;
         margin: 0 auto;
         padding: 0;
         border-collapse: collapse;
         border-spacing: 0;
     }
     
-    .responsive-table thead {
+    thead {
         display: table-column;
         visibility: hidden;
         /* background: #fafafa; */
@@ -53,23 +54,43 @@
     }
 }
 
-@media screen and (min-width: 768px) {
 
-    td {
-        display: table-cell;
-        /* text-align: left; */
-        font-size: 16px;
-        border-bottom: none;
+
+@media screen and (min-width: 1000px) {
+
+    table {
+        /* width: 60%; */
+        margin: 0 auto;
+        padding: 0;
+        border-collapse: collapse;
+        border-spacing: 0;
     }
 
     thead {
         visibility: visible;
     }
 
+    th {
+        padding: 10px;
+    }
+
     tr {
         display: table-row;
-        border-bottom-width: 1px;
-        margin-bottom: 0;
+        /* border-bottom-width: 1px;
+        margin-bottom: 0; */
+
+        border: 1px solid #ddd;
+        /* border-bottom: 2px solid #ddd; */
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+
+    td {
+        display: table-cell;
+        font-size: 16px;
+        border-bottom: 1px dotted #ddd;
+        padding: 10px;
+        
     }
 
     tr:nth-child(even) {

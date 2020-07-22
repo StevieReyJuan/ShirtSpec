@@ -22,10 +22,10 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <nav>
+        {/* <nav>
         </nav>
         <header>
-        </header>
+        </header> */}
         <main>
           {this.state.hasError && <p>ERROR</p>}
           <Switch>
@@ -38,9 +38,9 @@ class App extends Component {
             <Route component={NotFoundPage} />
           </Switch>
         </main>
-        <footer>
+        {/* <footer>
   
-        </footer>
+        </footer> */}
       </div>
     );
   }
