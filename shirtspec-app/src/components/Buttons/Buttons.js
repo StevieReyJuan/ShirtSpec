@@ -1,5 +1,5 @@
 import React from 'react';
-import './Buttons.css'
+import './Buttons.css';
 
 function Buttons(props) {
 
@@ -8,7 +8,7 @@ function Buttons(props) {
     return React.createElement(
         tag,
         {
-            ...otherProps, className: ['ButtonBar', className].join(' ')
+            ...otherProps, className: ['btn', className].join(' ')
         },
         children
     )

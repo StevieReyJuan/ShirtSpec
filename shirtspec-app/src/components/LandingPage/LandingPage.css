@@ -1,12 +1,29 @@
+@media (max-width: 500px) {
+  .landing-page .logo {
+    max-width: 90%;
+    padding: 15px 0;
+  }
+
+  .landing-page section {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 501px) {
+
+  .landing-page section {
+    padding: 30px 15px;
+  }
+}
+
+
 .logo {
     padding: 2%
   }
-  
-  
-  /* body {
-    padding: 60px 0 0;
-    font-size: 20px;
-  } */
+
+  .content.landing-page {
+    margin-top: 0;
+  }
 
   fieldset {
     padding: 0;
@@ -17,11 +34,12 @@
   }
   
   .login-form legend {
+    font-family: "Varela Round",arial,sans-serif;
     width: 100%;
     text-align: center;
     line-height: 38px;
     font-size: 35px;
-    font-weight: 300;
+    font-weight: 500;
     margin: 0 auto 45px;
   
   }
@@ -31,7 +49,7 @@
     padding:40px;
     margin: 0 auto;
     border: none;
-    background-color: #bbb;
+    background-color:#8fb0a9;
   }
   
   .login-form input {
@@ -44,19 +62,15 @@
   }
 
   .login-form button {
+    font-family: "Varela Round",arial,sans-serif;
     display: block;
     width: 100%;
     height: auto;
-    text-align: left;
     padding: 15px;
     margin: 10px auto 20px;
-  }
-  
-  .login-form button {
-    display: block;
+    cursor: pointer;
     font-size: 22px;
     font-weight: 500;
-    text-align: center;
   }
   
   .login-form button:hover {
@@ -67,11 +81,10 @@
       margin: 0 auto;
   }
   
-  footer {
+  .landing-page footer {
     text-align: center;
-    margin: 20px auto;
   }
 
-  footer p {
-    margin: 10px auto;
+  .landing-page footer a {
+    text-decoration: none;
   }

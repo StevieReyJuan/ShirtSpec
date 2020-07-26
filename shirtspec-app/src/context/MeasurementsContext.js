@@ -24,11 +24,9 @@ export class MeasurementsProvider extends Component {
         }
 
         this.setState({ customer })
-        console.log(customer)
     }
 
     setError = error => {
-        console.error(error)
         this.setState({ error })
     }
 

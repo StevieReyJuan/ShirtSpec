@@ -1,8 +1,8 @@
-import React from 'react'
-import './Content.css'
+import React from 'react';
+import './Content.css';
 
 export default function Content({ className, ...otherProps }) {
     return (
-        <div className={['Content', className].join(' ')} {...otherProps} />
-    );
+        <div className={['content', className].join(' ')} {...otherProps} />
+    )
 }

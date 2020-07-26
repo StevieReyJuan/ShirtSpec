@@ -1,19 +1,44 @@
-/* section {
-    min-height: 200px;
-    padding: 30px 15px;
-    background-color: #ddd;
-} */
+.content.measurement-page {
+    margin-top: 100px;
+}
 
-.measure-pic {
-    background-color: #fff;
+.demo-pic {
     min-width: 300px;
     min-height: 300px;
     margin: 2% auto;
 }
 
-.measure-instructions {
+.instructions {
+    padding: 5px;
 }
-/* 
-button {
-    margin: 2% 1%;
-} */
+
+.measurement-page h1 {
+    padding: 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .demo-pic {
+        max-width: 40%;
+    }
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .demo-pic {
+        max-width: 40%;
+    }
+
+    .instructions {
+        padding: 15px;
+    }
+
+    .content.measurement-page {
+        margin-top: 70px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .instructions {
+        text-align: left;
+    }
+}
