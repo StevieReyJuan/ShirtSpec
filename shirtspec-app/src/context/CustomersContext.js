@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 const CustomersContext = React.createContext({
     customerList: [],
@@ -22,7 +22,6 @@ export class CustomersProvider extends Component {
     }
 
     setError = error => {
-        console.error(error)
         this.setState({ error })
     }
 

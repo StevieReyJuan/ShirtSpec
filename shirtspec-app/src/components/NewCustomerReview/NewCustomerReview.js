@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import './NewCustomerReview.css';
-import StaticToolbar from '../Navbar/Toolbar/StaticToolbar'
+import StaticToolbar from '../Navbar/Toolbar/StaticToolbar';
 import Content from '../Content';
-import Buttons from '../Buttons/Buttons'
-import MeasurementsContext from '../../context/MeasurementsContext'
-import ShirtspecApiService from '../../services/api-endpoint-service'
-import MeasurementTable from '../MeasurementTable/MeasurementTable'
+import Buttons from '../Buttons/Buttons';
+import MeasurementsContext from '../../context/MeasurementsContext';
+import ShirtspecApiService from '../../services/api-endpoint-service';
+import MeasurementTable from '../MeasurementTable/MeasurementTable';
 
 class NewCustomerReview extends Component {
-    // static defaultProps = {
-    //     match: { params: {} }
-    // }
+
+    static defaultProps = {
+        match: { params: {} }
+    }
 
     static contextType = MeasurementsContext
 
@@ -38,12 +39,12 @@ class NewCustomerReview extends Component {
         return (
             <>
                 <StaticToolbar />
-                <Content className="review-table">
+                <Content className='review-table'>
                     <h2>{customer.customer_name}</h2>
                     <MeasurementTable customer={customer} className='new-customer' />
                 </Content>
                 <Buttons
-                    className="measurement-review"
+                    className='measurement-review'
                     tag={'button'}
                     onClick={() => {
                         this.props.history.goBack()
@@ -52,7 +53,7 @@ class NewCustomerReview extends Component {
                     Back
                 </Buttons>
                 <Buttons
-                    className="measurement-review"
+                    className='measurement-review'
                     tag={'button'}
                     onClick={() => {
                         this.context.clearCustomerDetails();
@@ -62,7 +63,7 @@ class NewCustomerReview extends Component {
                     Discard
                 </Buttons>
                 <Buttons
-                    className="measurement-review"
+                    className='measurement-review'
                     tag={'button'}
                     onClick={() => {
                         this.saveCustomer(customer);
@@ -70,7 +71,7 @@ class NewCustomerReview extends Component {
                 >
                     Save
                 </Buttons>
-                {this.context.error ? <p>Uh oh! Something went wrong! Make sure you've filled all measurements.</p> : <></>}
+                {this.context.error && <p className='error-message'>Uh oh! Something went wrong! Make sure you've filled all measurements.</p>}
             </>
         );
     }

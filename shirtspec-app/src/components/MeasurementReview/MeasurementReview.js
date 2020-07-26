@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './MeasurementReview.css';
-import StaticToolbar from '../Navbar/Toolbar/StaticToolbar'
+import StaticToolbar from '../Navbar/Toolbar/StaticToolbar';
 import Content from '../Content';
-import Buttons from '../Buttons/Buttons'
-import MeasurementsContext from '../../context/MeasurementsContext'
-import ShirtspecApiService from '../../services/api-endpoint-service'
-import MeasurementTable from '../MeasurementTable/MeasurementTable'
+import Buttons from '../Buttons/Buttons';
+import MeasurementsContext from '../../context/MeasurementsContext';
+import ShirtspecApiService from '../../services/api-endpoint-service';
+import MeasurementTable from '../MeasurementTable/MeasurementTable';
 
 class MeasurementReview extends Component {
     static defaultProps = {
@@ -29,20 +29,20 @@ class MeasurementReview extends Component {
         return (
             <>
                 <StaticToolbar />
-                <Content className="review-table">
-                    {error ? <p>Customer cannot be retrieved</p>
+                <Content className='review-table'>
+                    {error ? <p className='error-message'>Customer details cannot be retrieved</p>
                     : <h2>{customer.customer_name}</h2>}
                     <MeasurementTable customer={customer} className='existing-customer'/>
                 </Content>
                 <Buttons
-                    className="measurement-review"
+                    className='measurement-review'
                     tag={Link}
                     to='/customers'
                 >
                     Back
                 </Buttons>
                 <Buttons
-                    className="measurement-review"
+                    className='measurement-review'
                     tag={Link}
                     to='/measurement-page/chest'
                 >

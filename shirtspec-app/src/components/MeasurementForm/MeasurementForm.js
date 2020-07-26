@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
-import './MeasurementForm.css'
-import MeasurementsContext from '../../context/MeasurementsContext'
-import VALUES from '../../shirt-resources/measurement-values'
+import React, { Component } from 'react';
+import './MeasurementForm.css';
+import MeasurementsContext from '../../context/MeasurementsContext';
+import VALUES from '../../shirt-resources/measurement-values';
 
 class MeasurementForm extends Component {
+
     static contextType = MeasurementsContext
 
     state = {
@@ -24,7 +25,9 @@ class MeasurementForm extends Component {
         const measurementValue = VALUES.find(v => 
             v.id === measurementId
         )
-        const formattedName = (measurementValue.id).replace(/-/g, "_")
+
+        // I could (or should...) have just changed the values in the store. Maybe later.
+        const formattedName = (measurementValue.id).replace(/-/g, '_')
 
         let value = this.context.customer[formattedName]
 
@@ -38,25 +41,26 @@ class MeasurementForm extends Component {
 
         return (
             <form
-                className={['MeasurementForm', measurementId].join(' ')}
+                className={['measurement-form', measurementId].join(' ')}
                 action='#'
                 {...props}
             >
-                <div className="measurement-container form-section">
-                    <label htmlFor="measurement-value"></label>
+                <div className='measurement-container form-section'>
+                    <label htmlFor='measurement-value'></label>
                     {measurementId === 'customer-name' 
                         ? 
-                            <input onChange={this.handleChange} type='text' name="customer_name" defaultValue={this.context.customer.customer_name} required /> 
+                            <input onChange={this.handleChange} type='text' name='customer_name' placeholder='Customer Name' defaultValue={this.context.customer.customer_name} required /> 
                         :
                             <select value={value} onChange={this.handleChange} name={formattedName}>
                                     <option value={''}></option>
                                 {measurementValue.values.map(opt => 
-                                    <option value={formattedName=='shoulder_line' ? opt : parseFloat(opt)} key={opt}>{opt}</option>
+                                    // The rest of the mapped values here are numbers, with the exception of 'shoulder_line', which is a string.
+                                    <option value={formattedName === 'shoulder_line' ? opt : parseFloat(opt)} key={opt}>{opt}</option>
                                 )}
                             </select>}
                 </div>
             </form>
-          )
+        )
     }
 
 }

@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #521751;
+    background: #8fb0a9;
     height: 56px;
 }
 
@@ -49,19 +49,3 @@
 .toolbar__navigation-items a:active {
     color: #fa923f;
 }
-
-/* @media (max-width: 768px) {
-    .toolbar__navigation-items {
-        display: none;
-    }
-}
-
-@media (min-width: 769px) {
-    .toolbar__toggle-button {
-        display: none;
-    }
-
-    .toolbar__logo {
-        margin-left: 0;
-    }
-} */

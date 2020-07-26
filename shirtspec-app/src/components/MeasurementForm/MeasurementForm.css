@@ -1,3 +1,7 @@
-.MeasurementForm {
+.measurement-form {
     padding: 2%;
+}
+
+.measurement-form select, input {
+    margin-bottom: 10px;
 }

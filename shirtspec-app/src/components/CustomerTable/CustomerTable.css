@@ -1,7 +1,6 @@
 @media screen and (min-width: 1000px) {
 
     .customer-table table {
-        /* width: 60%; */
         min-height: 400px;
         max-width: 400px;
         margin: 0 auto;
@@ -9,6 +8,7 @@
         border-collapse: collapse;
         border-spacing: 0;
         justify-content: end;
+        border-bottom: 2px solid #ddd;
     }
 
 }
