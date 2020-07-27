@@ -30,7 +30,7 @@ Measurement Instruction Page
 
 Responsive Nav/Sidebar
 
-![responsive nav/sidebar](public/screengrabs/sidebar)
+![responsive nav/sidebar](public/screengrabs/sidebar.png)
 
 Review/Submit Page
 
@@ -78,3 +78,5 @@ This repository only contains the front-end client. To develop locally, the serv
 ## Acknowledgments
 
 * **Mario Mol** - My mentor--Can't thank you enough for your guidance. 
+
+* **David Dumont** My IS rep. Thanks for the resources!
