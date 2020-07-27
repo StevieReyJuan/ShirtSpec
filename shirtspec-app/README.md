@@ -1,68 +1,80 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- # Shirtspec-->
+# Shirtspec
 
-## Available Scripts
+Shirtspec is a measurement companion app for Individualized Shirts retail partners. Designed specifically with new trainees in mind, Shirtspec guides fitters through the custom shirt fitting process ensuring that they accurately record key values within the scope of the nation's most comprehensive custom shirt program.
 
-In the project directory, you can run:
+## Motivation
 
-### `npm start`
+I have personally been an IS partner for nearly decade now, and though the fitting program has advanced and become more detailed/thorough, the online ordering portal has significantly lagged behind. This project truly is the earliest, minimal iteration in what I hope can become a worthy successor to the current online order form. There's a long way to go from here--measurement validations are the most pressing need at the moment, but to replace the ol' fax machine we haven't even scratched the surface.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Build Status
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Version 1.0 gets the customers and their measurements on the board for a given store (aka "retail partner"). At the moment, customer edits take precedence as generally MTM customers are loyal to program and repeat business, so no immediate need to delete customers. For new fitters, measurement logic/validations will be most valuable to this project, which is in-progress. Thankfully the current training program has these measurement limits and warnings well-documented, so it's just a matter of transcribing them--time consuming, nonetheless.
 
-### `npm test`
+## Screenshots
+Landing Page/Log In
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![landing page](public/screengrabs/landingpage.png)
 
-### `npm run build`
+Customers Screen:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![customers](public/screengrabs/customers.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Customer Info: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![customer info](public/screengrabs/customerinfo.png)
 
-### `npm run eject`
+Measurement Instruction Page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![measurement page](public/screengrabs/measurementpage.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Responsive Nav/Sidebar
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![responsive nav/sidebar](public/screengrabs/sidebar)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Review/Submit Page
 
-## Learn More
+![review page](public/screengrabs/reviewsubmit.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Built With
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Front-End
+* HTML
+* CSS (No frameworks)
+* Javascript
+* React (Create React App, React Router)
 
-### Code Splitting
+### Testing
+* Jest (Smoke tests)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### Production
+* Deployed via Vercel
 
-### Analyzing the Bundle Size
+## Upcoming features
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+* Measurement validations and pattern limit warnings 
+* Delete a customer
+* Fabric availability
+* UX/UI improvements
 
-### Making a Progressive Web App
+## Demo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- [Live Demo](https://shirtspec-app.vercel.app/)
 
-### Advanced Configuration
+## Getting Started
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Run `npm install` to load dependencies
 
-### Deployment
+Run `npm test` to ensure build is stable
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+This repository only contains the front-end client. To develop locally, the server is required which can be found at the repository below:
 
-### `npm run build` fails to minify
+[https://github.com/StevieReyJuan/shirtspec-api](https://github.com/StevieReyJuan/shirtspec-api)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Authors
+
+* **S. Reyes** - Development
+
+## Acknowledgments
+
+* **Mario Mol** - My mentor--Can't thank you enough for your guidance. 
