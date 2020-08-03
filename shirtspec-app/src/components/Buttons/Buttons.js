@@ -11,7 +11,7 @@ function Buttons(props) {
             ...otherProps, className: ['btn', className].join(' ')
         },
         children
-    )
+    );
 }
 
 export default Buttons;

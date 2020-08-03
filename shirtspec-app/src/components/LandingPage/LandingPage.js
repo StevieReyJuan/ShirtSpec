@@ -7,33 +7,33 @@ import Content from '../Content';
 
 class LandingPage extends Component {
 
-    static defaultProps = {
-        onLoginSuccess: () => {}
-    }
+    // static defaultProps = {
+    //     onLoginSuccess: () => {}
+    // }
 
     state = {
         error: null
-    }
+    };
 
     handleSubmitJwtAuth = e => {
-        e.preventDefault()
-        this.setState({ error: null })
-        const { user_name, password } = e.target
+        e.preventDefault();
+        this.setState({ error: null });
+        const { user_name, password } = e.target;
 
         AuthApiService.postLogin({
             user_name: user_name.value,
             password: password.value
         })
             .then(res => {
-                user_name.value = ''
-                password.value = ''
-                TokenService.saveAuthToken(res.authToken)
+                user_name.value = '';
+                password.value = '';
+                TokenService.saveAuthToken(res.authToken);
                 // this.props.onLoginSuccess()
-                this.props.history.push('/customers')
+                this.props.history.push('/customers');
             })
             .catch(res => {
-                this.setState({ error: res.error })
-            })
+                this.setState({ error: res.error });
+            });
     }
 
     // TODO: 
@@ -44,14 +44,14 @@ class LandingPage extends Component {
     // }
 
     testModeCredentials = () => {
-        document.getElementById('LoginForm_user_name').value = 'test'
-        document.getElementById('LoginForm_password').value = 'test'
+        document.getElementById('LoginForm_user_name').value = 'test';
+        document.getElementById('LoginForm_password').value = 'test';
         // TODO: autosubmit?
     }
 
     render() {
 
-        const { error } =this.state
+        const { error } = this.state;
 
         return(
             <>
@@ -59,7 +59,7 @@ class LandingPage extends Component {
                     <header>
                         <img className='logo' src='/pics/logo.png' alt='Individualized Shirts Logo' />
                     </header>
-
+                    {error && <p className='error-message'>{error}</p>}
                     <main>
 
                         <form 
@@ -86,13 +86,12 @@ class LandingPage extends Component {
                     </main>
 
                     <footer className='footer'>
-                        {error && <p className='error-message'>{error.message}</p>}
                         <p>New user? <Link to='/register'>SIGN UP</Link></p>
                         <p>To continue in test mode, <button className='btn' onClick={() => this.testModeCredentials()}>FILL</button> test credentials</p>
                     </footer>
                 </Content>
             </>
-        )
+        );
     }
 }
 

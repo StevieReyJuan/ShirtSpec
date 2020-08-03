@@ -59,4 +59,4 @@ export default [
         id: 'shoulder-line',
         values: ['regular', 'square', 'slope','exteme-slope']
     }
-]
+];

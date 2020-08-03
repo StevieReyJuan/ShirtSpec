@@ -11,20 +11,20 @@ import MeasurementTable from '../MeasurementTable/MeasurementTable';
 class MeasurementReview extends Component {
     static defaultProps = {
         match: { params: {} }
-    }
+    };
 
-    static contextType = MeasurementsContext
+    static contextType = MeasurementsContext;
 
     componentDidMount() {
-        const { customerId } = this.props.match.params
-        this.context.clearError()
+        const { customerId } = this.props.match.params;
+        this.context.clearError();
         ShirtspecApiService.getCustomerById(customerId)
             .then(this.context.setCustomerDetails)
-            .catch(this.context.setError)
+            .catch(this.context.setError);
     }
 
     render() {
-        const { customer, error } = this.context
+        const { customer, error } = this.context;
 
         return (
             <>

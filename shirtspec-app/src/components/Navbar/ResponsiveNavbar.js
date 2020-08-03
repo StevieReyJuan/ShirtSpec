@@ -7,7 +7,7 @@ import Backdrop from './Backdrop/Backdrop';
 class ResponsiveNavbar extends Component {
     state = {
       sideDrawerOpen: false
-    }
+    };
   
     drawerToggleClickHandler = () => {
         this.setState((prevState) => {
@@ -16,7 +16,7 @@ class ResponsiveNavbar extends Component {
     }
   
     backdropClickHandler = () => {
-        this.setState({ sideDrawerOpen: false })
+        this.setState({ sideDrawerOpen: false });
     }
   
     render() {
@@ -29,6 +29,6 @@ class ResponsiveNavbar extends Component {
             </div>
         );
     }
-  }
+}
   
-  export default ResponsiveNavbar;
+export default ResponsiveNavbar;

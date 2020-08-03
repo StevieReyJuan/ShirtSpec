@@ -63,6 +63,8 @@ Review/Submit Page
 
 ## Getting Started
 
+cd to `shirtspec-app`
+
 Run `npm install` to load dependencies
 
 Run `npm test` to ensure build is stable

@@ -8,11 +8,11 @@ import CustomerListItem from '../CustomerListItem/CustomerListItem';
 
 class CustomerTable extends Component {
 
-    static contextType = MeasurementsContext
+    static contextType = MeasurementsContext;
 
     render() {
 
-        const { error } = this.context
+        const { error } = this.context;
         
         return (
             <>
@@ -41,7 +41,8 @@ class CustomerTable extends Component {
                     className='customer-table'
                     tag={'button'}
                     onClick={() => { this.context.clearCustomerDetails();
-                                    this.props.history.push('/measurement-page/customer-name')} }
+                                    this.props.history.push('/measurement-page/customer-name')} 
+                            }
                 >
                     Add Customer
                 </Buttons>

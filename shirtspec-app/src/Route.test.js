@@ -16,6 +16,7 @@ describe('Public/Private Route components', () => {
         </BrowserRouter>, div);
         ReactDOM.unmountComponentAtNode(div);
     });
+    
     it('renders without crashing', () => {
         
         const div = document.createElement('div');

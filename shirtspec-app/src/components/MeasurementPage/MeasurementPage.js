@@ -13,15 +13,15 @@ class MeasurementPage extends Component {
             params: {
                 measurementId: 'customer-name'}
         }
-    }
+    };
 
     render() {
 
         const measurementStep = INSTRUCTIONS.find(i => 
             i.id === this.props.match.params.measurementId
-        )
+        );
 
-        const currentPage = INSTRUCTIONS.indexOf(measurementStep)
+        const currentPage = INSTRUCTIONS.indexOf(measurementStep);
 
         return (
             <>
@@ -65,7 +65,7 @@ class MeasurementPage extends Component {
                     </section>
                 </Content>
             </>
-        )
+        );
     }
 }
 

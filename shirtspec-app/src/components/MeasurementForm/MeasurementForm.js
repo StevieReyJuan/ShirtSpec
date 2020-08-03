@@ -5,34 +5,34 @@ import VALUES from '../../shirt-resources/measurement-values';
 
 class MeasurementForm extends Component {
 
-    static contextType = MeasurementsContext
+    static contextType = MeasurementsContext;
 
     state = {
         selectedValue: null
-    }
+    };
 
     handleChange = e => {
-        let { target: { name, value } } = e
+        let { target: { name, value } } = e;
         if (name !== 'shoulder_line' && name !== 'customer_name') {
             value = parseFloat(value);
         }
-        const updatedCustomerMeasurement = {[name]: value}
-        this.context.updateMeasurement(updatedCustomerMeasurement)
+        const updatedCustomerMeasurement = {[name]: value};
+        this.context.updateMeasurement(updatedCustomerMeasurement);
     }
 
     render() {
-        const { measurementId, ...props } = this.props
+        const { measurementId, ...props } = this.props;
         const measurementValue = VALUES.find(v => 
             v.id === measurementId
-        )
+        );
 
         // I could (or should...) have just changed the values in the store. Maybe later.
-        const formattedName = (measurementValue.id).replace(/-/g, '_')
+        const formattedName = (measurementValue.id).replace(/-/g, '_');
 
-        let value = this.context.customer[formattedName]
+        let value = this.context.customer[formattedName];
 
         if (formattedName !== 'shoulder_line' && formattedName !== 'customer_name') {
-            value = parseFloat(this.context.customer[formattedName])
+            value = parseFloat(this.context.customer[formattedName]);
         }
 
         if (!value) {
@@ -60,7 +60,7 @@ class MeasurementForm extends Component {
                             </select>}
                 </div>
             </form>
-        )
+        );
     }
 
 }

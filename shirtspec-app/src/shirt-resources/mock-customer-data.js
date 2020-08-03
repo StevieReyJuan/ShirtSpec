@@ -13,4 +13,4 @@ export default [
         'collar': 15,
         'shoulder-line': 'square' 
     }
-]
+];

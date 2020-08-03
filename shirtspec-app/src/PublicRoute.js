@@ -15,5 +15,5 @@ export default function PublicRoute({ component, ...props}) {
                     : <Component {...componentProps} />
             )}
         />
-    )
+    );
 }

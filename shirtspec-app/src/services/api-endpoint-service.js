@@ -12,7 +12,7 @@ const ShirtspecApiService = {
             (!res.ok)
                 ? res.json().then(e => Promise.reject(e))
                 : res.json()
-        )
+        );
     },
     getCustomerById(customerId) {
         return fetch(`${config.API_ENDPOINT}/customers/${customerId}`, {
@@ -24,7 +24,7 @@ const ShirtspecApiService = {
             (!res.ok)
                 ? res.json().then(e => Promise.reject(e))
                 : res.json()
-        )
+        );
     },
     postCustomer(customerDetails) {
           return fetch(`${config.API_ENDPOINT}/customers`, {
@@ -39,7 +39,7 @@ const ShirtspecApiService = {
             (!res.ok)
                 ? res.json().then(e => Promise.reject(e))
                 : res.json()
-        )
+        );
     },
     updateCustomer(customerId, customerDetails) {
         return fetch(`${config.API_ENDPOINT}/customers/${customerId}`, {
@@ -54,7 +54,7 @@ const ShirtspecApiService = {
             (!res.ok)
                 ? res.json().then(e => Promise.reject(e))
                 : res.json()
-        )
+        );
     }
 }
 

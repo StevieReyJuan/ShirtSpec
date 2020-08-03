@@ -11,30 +11,30 @@ class NewCustomerReview extends Component {
 
     static defaultProps = {
         match: { params: {} }
-    }
+    };
 
-    static contextType = MeasurementsContext
+    static contextType = MeasurementsContext;
 
     saveCustomer = customer => {
         if (typeof customer.id === 'undefined') {
             ShirtspecApiService.postCustomer(customer)
                 .then(newCustomer => {
-                    this.props.history.push(`/customers/${newCustomer.id}`)
-                    this.context.clearCustomerDetails()
+                    this.props.history.push(`/customers/${newCustomer.id}`);
+                    this.context.clearCustomerDetails();
                 })
-                .catch(this.context.setError)
-        }   else {
-                    ShirtspecApiService.updateCustomer(customer.id, customer)
-                        .then(customer => {
-                        this.props.history.push(`/customers/${customer.id}`)
-                        this.context.clearCustomerDetails()
-                        })
-                        .catch(this.context.setError)
+                .catch(this.context.setError);
+        } else {
+                ShirtspecApiService.updateCustomer(customer.id, customer)
+                    .then(customer => {
+                        this.props.history.push(`/customers/${customer.id}`);
+                        this.context.clearCustomerDetails();
+                    })
+                    .catch(this.context.setError);
                 }
     }     
 
     render() {
-        const { customer } = this.context
+        const { customer } = this.context;
 
         return (
             <>
@@ -47,7 +47,7 @@ class NewCustomerReview extends Component {
                     className='measurement-review'
                     tag={'button'}
                     onClick={() => {
-                        this.props.history.goBack()
+                        this.props.history.goBack();
                     }}
                 >
                     Back
@@ -57,7 +57,7 @@ class NewCustomerReview extends Component {
                     tag={'button'}
                     onClick={() => {
                         this.context.clearCustomerDetails();
-                        this.props.history.push('/customers')
+                        this.props.history.push('/customers');
                     }}
                 >
                     Discard

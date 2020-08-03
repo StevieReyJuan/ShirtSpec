@@ -13,3 +13,8 @@
 .content section {
     min-height: 200px;
 }
+
+.error-message {
+    color: red;
+    padding: 10px;
+}

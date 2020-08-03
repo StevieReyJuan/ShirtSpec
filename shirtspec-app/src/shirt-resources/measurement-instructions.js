@@ -72,4 +72,4 @@ export default [
         image: '/pics/shoulderline1.png',
         content: 'The shoulder line is determined by assessing the front panel of the shirt of the upper chest. Square shoulders can be described as a pull from the third button out towards the shoulder, slope shoulders as a pull from under the arms toward the collar, extreme slope as a more exaggerated slope shoulder (not to be used on initial orders), and drop right or left indicates that only one shoulder is sloped. Do not discuss the shoulder line with your customer!'
     },
-]
+];

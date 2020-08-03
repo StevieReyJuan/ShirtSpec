@@ -12,11 +12,12 @@ import NewCustomerReview from './components/NewCustomerReview/NewCustomerReview'
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 class App extends Component {
-    state = { hasError: false }
+
+    state = { hasError: false };
 
     static getDerivedStateFromError(error) {
-      return { hasError: true }
-    }
+      return { hasError: true };
+    };
 
     render() {
         return (
@@ -35,7 +36,7 @@ class App extends Component {
                     </Switch>
                 </main>
             </div>
-        )
+        );
     }
 }
 

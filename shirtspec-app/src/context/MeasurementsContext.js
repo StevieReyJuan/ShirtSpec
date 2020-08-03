@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 const MeasurementsContext = React.createContext({
     customer: {},
@@ -8,41 +8,42 @@ const MeasurementsContext = React.createContext({
     setCustomerDetails: () => {},
     clearCustomerDetails: () => {},
     updateMeasurement: () => {}
-})
+});
 
-export default MeasurementsContext
+export default MeasurementsContext;
 
 export class MeasurementsProvider extends Component {
+    
     state = {
         customer: {},
         error: null
-    }
+    };
 
     setCustomerDetails = customer => {
         if (!customer) {
             customer = {}
         }
 
-        this.setState({ customer })
+        this.setState({ customer });
     }
 
     setError = error => {
-        this.setState({ error })
+        this.setState({ error });
     }
 
     clearError = () => {
-        this.setState({ error: null })
+        this.setState({ error: null });
     }
     
     clearCustomerDetails = () => {
         this.setCustomerDetails({
             customer_name: ''
-        })
+        });
     }
 
     updateMeasurement = measurement => {
-        const updatedCustomer = {...this.state.customer, ...measurement}
-        this.setCustomerDetails(updatedCustomer)
+        const updatedCustomer = {...this.state.customer, ...measurement};
+        this.setCustomerDetails(updatedCustomer);
     }
 
     render() {
@@ -54,11 +55,12 @@ export class MeasurementsProvider extends Component {
             setCustomerDetails: this.setCustomerDetails,
             clearCustomerDetails: this.setCustomerDetails,
             updateMeasurement: this.updateMeasurement
-        }
+        };
+        
         return (
             <MeasurementsContext.Provider value={value}>
                 {this.props.children}
             </MeasurementsContext.Provider>
-        )
+        );
     }
 }

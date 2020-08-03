@@ -7,30 +7,31 @@ const CustomersContext = React.createContext({
     clearError: () => {},
     setCustomersList: () => {},
     clearCustomersList: () => {}
-})
+});
 
-export default CustomersContext
+export default CustomersContext;
 
 export class CustomersProvider extends Component {
+
     state = {
         customerList: [],
         error: null
-    }
+    };
 
     setCustomersList = customerList => {
-        this.setState({ customerList })
+        this.setState({ customerList });
     }
 
     setError = error => {
-        this.setState({ error })
+        this.setState({ error });
     }
 
     clearError = () => {
-        this.setState({ error: null })
+        this.setState({ error: null });
     }
 
     clearCustomersList = () => {
-        this.setState( { customerList: [] })
+        this.setState( { customerList: [] });
     }
 
     render() {
@@ -41,11 +42,12 @@ export class CustomersProvider extends Component {
             clearError: this.clearError,
             setCustomersList: this.setCustomersList,
             clearCustomersList: this.clearCustomersList
-        }
+        };
+
         return (
             <CustomersContext.Provider value={value}>
                 {this.props.children}
             </CustomersContext.Provider>
-        )
+        );
     }
 }
