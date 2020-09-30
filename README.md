@@ -14,27 +14,27 @@ Version 1.0 gets the customers and their measurements on the board for a given s
 ## Screenshots
 Landing Page/Log In
 
-![landing page](screengrabs/landingpage.png)
+![landing page](shirtspec-app/screengrabs/landingpage.png)
 
 Customers Screen:
 
-![customers](screengrabs/customers.png)
+![customers](shirtspec-app/screengrabs/customers.png)
 
 Customer Info: 
 
-![customer info](screengrabs/customerinfo.png)
+![customer info](shirtspec-app/screengrabs/customerinfo.png)
 
 Measurement Instruction Page
 
-![measurement page](screengrabs/measurementpage.png)
+![measurement page](shirtspec-app/screengrabs/measurementpage.png)
 
 Responsive Nav/Sidebar
 
-![responsive nav/sidebar](screengrabs/sidebar.png)
+![responsive nav/sidebar](shirtspec-app/screengrabs/sidebar.png)
 
 Review/Submit Page
 
-![review page](screengrabs/reviewsubmit.png)
+![review page](shirtspec-app/screengrabs/reviewsubmit.png)
 
 ## Built With
 
