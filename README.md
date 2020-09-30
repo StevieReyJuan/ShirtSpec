@@ -14,27 +14,27 @@ Version 1.0 gets the customers and their measurements on the board for a given s
 ## Screenshots
 Landing Page/Log In
 
-![landing page](public/screengrabs/landingpage.png)
+![landing page](screengrabs/landingpage.png)
 
 Customers Screen:
 
-![customers](public/screengrabs/customers.png)
+![customers](screengrabs/customers.png)
 
 Customer Info: 
 
-![customer info](public/screengrabs/customerinfo.png)
+![customer info](screengrabs/customerinfo.png)
 
 Measurement Instruction Page
 
-![measurement page](public/screengrabs/measurementpage.png)
+![measurement page](screengrabs/measurementpage.png)
 
 Responsive Nav/Sidebar
 
-![responsive nav/sidebar](public/screengrabs/sidebar.png)
+![responsive nav/sidebar](screengrabs/sidebar.png)
 
 Review/Submit Page
 
-![review page](public/screengrabs/reviewsubmit.png)
+![review page](screengrabs/reviewsubmit.png)
 
 ## Built With
 
